@@ -30,9 +30,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Key centerKey = ValueKey<String>('bottom-sliver-list');
+  var _nilai = 100;
 
-  int _nilai = 100;
+  late int diketuk;
+  late int terdiam;
 
   void _diketuk() {
     setState(() {
@@ -57,22 +58,218 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: const EdgeInsets.symmetric(horizontal: 5.0),
           children: <Widget>[
             Container(
-              margin: const EdgeInsets.only(top: 20.0, right: 30.0, left: 30.0),
+              margin: const EdgeInsets.only(top: 20.0, right: 35.0, left: 35.0),
               width: 310,
               height: 100,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16.0),
-                color: Colors.black,
+                color: Colors.green[800],
               ),
-              child: Row(
-                children: [],
+              child: Center(
+                child: Row(
+                  children: const [
+                    SizedBox(width: 27),
+                    Text(
+                      'Surah Al-Baqarah      |',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(width: 30),
+                    Text(
+                      'Hal: 2',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
+            ), // Banner
             Container(
               padding: const EdgeInsets.symmetric(vertical: 13, horizontal: 13),
               child: Image.asset('assets/image.png'),
             ), // Image Quran
-            Container(),
+            Container(
+              margin: const EdgeInsets.only(top: 20.0),
+              child: Column(
+                children: [
+                  Center(
+                    child: Text(
+                      '$_nilai',
+                      style: const TextStyle(fontSize: 70),
+                    ),
+                  ),
+                  const SizedBox(height: 40.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Ink(
+                        decoration: const ShapeDecoration(
+                          color: Color(0xff437cd1),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10.0),
+                            bottomLeft: Radius.circular(10.0),
+                          )),
+                        ),
+                        child: IconButton(
+                          icon: const Icon(Icons.refresh),
+                          color: Colors.white,
+                          onPressed: () {},
+                        ),
+                      ),
+                      SizedBox(
+                        width: 250,
+                        height: 48,
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(const Color(0xff0d18de)),
+                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                             const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(10.0),
+                                  bottomRight: Radius.circular(10.0),
+                                ),
+                              ),
+                            ),
+                          ),
+                          onPressed: () {},
+                          child: const Text("Diketuk", style: TextStyle(fontSize: 20)),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 15.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Ink(
+                        decoration: const ShapeDecoration(
+                          color: Color(0xff437cd1),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10.0),
+                            bottomLeft: Radius.circular(10.0),
+                          )),
+                        ),
+                        child: IconButton(
+                          icon: const Icon(Icons.refresh),
+                          color: Colors.white,
+                          onPressed: () {},
+                        ),
+                      ),
+                      SizedBox(
+                        width: 250,
+                        height: 48,
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(const Color(0xff0d18de)),
+                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                              const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(10.0),
+                                  bottomRight: Radius.circular(10.0),
+                                ),
+                              ),
+                            ),
+                          ),
+                          onPressed: () {},
+                          child: const Text("Diberitahu", style: TextStyle(fontSize: 20)),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 15.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Ink(
+                        decoration: const ShapeDecoration(
+                          color: Color(0xff437cd1),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10.0),
+                            bottomLeft: Radius.circular(10.0),
+                          )),
+                        ),
+                        child: IconButton(
+                          icon: const Icon(Icons.refresh),
+                          color: Colors.white,
+                          onPressed: () {},
+                        ),
+                      ),
+                      SizedBox(
+                        width: 250,
+                        height: 48,
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(const Color(0xff0d18de)),
+                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                              const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(10.0),
+                                  bottomRight: Radius.circular(10.0),
+                                ),
+                              ),
+                            ),
+                          ),
+                          onPressed: () {},
+                          child: const Text("Salah Harokat", style: TextStyle(fontSize: 20)),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 15.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Ink(
+                        decoration: const ShapeDecoration(
+                          color: Color(0xff437cd1),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10.0),
+                            bottomLeft: Radius.circular(10.0),
+                          )),
+                        ),
+                        child: IconButton(
+                          icon: const Icon(Icons.refresh),
+                          color: Colors.white,
+                          onPressed: () {},
+                        ),
+                      ),
+                      SizedBox(
+                        width: 250,
+                        height: 48,
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(const Color(0xff0d18de)),
+                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                              const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(10.0),
+                                  bottomRight: Radius.circular(10.0),
+                                ),
+                              ),
+                            ),
+                          ),
+                          onPressed: () {},
+                          child: const Text("Berhenti Lama", style: TextStyle(fontSize: 20)),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ), // Score & Button
+            Container(
+              margin: const EdgeInsets.only(top: 30.0, left: 20.0, right: 20.0),
+              child: const TextField(
+                maxLines: 10,
+                decoration: InputDecoration.collapsed(hintText: "Note Here..."),
+              ),
+            ),
           ],
         ),
       ),
