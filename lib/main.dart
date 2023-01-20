@@ -32,21 +32,46 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   var _nilai = 100;
 
-  late int diketuk;
-  late int terdiam;
-
   void _diketuk() {
     setState(() {
-      _nilai - 8;
+      _nilai -= 2;
+    });
+  }
+  void _rdiketuk() {
+    setState((){
+      _nilai += 2;
     });
   }
 
-  void _terdiam() {
+  void _diberitahu() {
     setState(() {
-
+      _nilai -= 4;
     });
   }
-
+  void _rdiberitahu() {
+    setState(() {
+      _nilai += 4;
+    });
+  }
+  void _salahharokat() {
+    setState(() {
+      _nilai -= 5;
+    });
+  }
+  void _rsalahharokat() {
+    setState(() {
+      _nilai += 5;
+    });
+  }
+  void _berhentilama() {
+    setState(() {
+      _nilai -= 6;
+    });
+  }void _rberhentilama() {
+    setState(() {
+      _nilai += 6;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -137,7 +162,9 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            _diketuk();
+                          },
                           child: const Text("Diketuk", style: TextStyle(fontSize: 20)),
                         ),
                       ),
@@ -158,7 +185,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: IconButton(
                           icon: const Icon(Icons.refresh),
                           color: Colors.white,
-                          onPressed: () {},
+                          onPressed: () {
+
+                          },
                         ),
                       ),
                       SizedBox(
@@ -176,7 +205,9 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            _diberitahu();
+                          },
                           child: const Text("Diberitahu", style: TextStyle(fontSize: 20)),
                         ),
                       ),
@@ -215,7 +246,9 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            _salahharokat();
+                          },
                           child: const Text("Salah Harokat", style: TextStyle(fontSize: 20)),
                         ),
                       ),
@@ -254,7 +287,9 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            _berhentilama();
+                          },
                           child: const Text("Berhenti Lama", style: TextStyle(fontSize: 20)),
                         ),
                       ),
