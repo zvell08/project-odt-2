@@ -30,7 +30,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var _nilai = 100;
+  int _nilai = 100;
+
+  int badge1 = 0;
+  int badge2 = 0;
+  int badge3 = 0;
+  int badge4 = 0;
 
   void _diketuk() {
     setState(() {
@@ -144,7 +149,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: IconButton(
                           icon: const Icon(Icons.refresh),
                           color: Colors.white,
-                          onPressed: () {},
+                          onPressed: () {
+                            badge1--;
+                            _rdiketuk();
+                          },
                         ),
                       ),
                       SizedBox(
@@ -163,9 +171,10 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                           ),
                           onPressed: () {
+                            badge1++;
                             _diketuk();
                           },
-                          child: const Text("Diketuk", style: TextStyle(fontSize: 20)),
+                          child: Text("Diketuk:  $badge1", style: TextStyle(fontSize: 20)),
                         ),
                       ),
                     ],
@@ -186,7 +195,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           icon: const Icon(Icons.refresh),
                           color: Colors.white,
                           onPressed: () {
-
+                            _rdiberitahu();
+                            badge2--;
                           },
                         ),
                       ),
@@ -206,9 +216,10 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                           ),
                           onPressed: () {
+                            badge2++;
                             _diberitahu();
                           },
-                          child: const Text("Diberitahu", style: TextStyle(fontSize: 20)),
+                          child: Text("Diberitahu:  $badge2", style: TextStyle(fontSize: 20)),
                         ),
                       ),
                     ],
@@ -228,7 +239,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: IconButton(
                           icon: const Icon(Icons.refresh),
                           color: Colors.white,
-                          onPressed: () {},
+                          onPressed: () {
+                            _rsalahharokat();
+                            badge3--;
+                          },
                         ),
                       ),
                       SizedBox(
@@ -248,8 +262,9 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           onPressed: () {
                             _salahharokat();
+                            badge3++;
                           },
-                          child: const Text("Salah Harokat", style: TextStyle(fontSize: 20)),
+                          child: Text("Salah Harokat:  $badge3", style: TextStyle(fontSize: 20)),
                         ),
                       ),
                     ],
@@ -269,7 +284,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: IconButton(
                           icon: const Icon(Icons.refresh),
                           color: Colors.white,
-                          onPressed: () {},
+                          onPressed: () {
+                            badge4--;
+                            _rberhentilama();
+                          },
                         ),
                       ),
                       SizedBox(
@@ -289,8 +307,9 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           onPressed: () {
                             _berhentilama();
+                            badge4++;
                           },
-                          child: const Text("Berhenti Lama", style: TextStyle(fontSize: 20)),
+                          child: Text("Berhenti Lama: $badge4", style: TextStyle(fontSize: 20)),
                         ),
                       ),
                     ],
@@ -299,10 +318,18 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ), // Score & Button
             Container(
-              margin: const EdgeInsets.only(top: 30.0, left: 20.0, right: 20.0),
+              margin: const EdgeInsets.only(top: 30.0, left: 40.0, right: 40.0, bottom: 30.0),
               child: const TextField(
                 maxLines: 10,
-                decoration: InputDecoration.collapsed(hintText: "Note Here..."),
+                decoration: InputDecoration(
+                  hintText: "Note Here...",
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      width: 3,
+                      color: Colors.black38,
+                    )
+                  ),
+                ),
               ),
             ),
           ],
