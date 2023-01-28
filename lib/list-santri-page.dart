@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 
 
-class BelajarListView extends StatelessWidget {
+class listSantri extends StatelessWidget {
   final List santri = [
     "Royyan",
     "Marvel",
